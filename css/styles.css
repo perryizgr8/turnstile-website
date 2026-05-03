@@ -472,23 +472,6 @@ body {
 
 .pricing-card-featured {
     border-color: var(--accent);
-    position: relative;
-}
-
-.pricing-card-featured::before {
-    content: "Most Popular";
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--accent);
-    color: #fff;
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: .05em;
-    padding: 4px 16px;
-    border-radius: 100px;
 }
 
 .pricing-tier {
