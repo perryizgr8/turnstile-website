@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="stroke-main" x1="128" y1="210" x2="128" y2="50" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4338ca"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="8" y="8" width="240" height="240" rx="56" ry="56" fill="#1a1a2e"/>
+
+  <line x1="128" y1="210" x2="128" y2="138"
+        stroke="url(#stroke-main)" stroke-width="14" stroke-linecap="round"/>
+
+  <circle cx="128" cy="138" r="10" fill="#7c3aed"/>
+
+  <line x1="128" y1="138" x2="58" y2="58"
+        stroke="#7c3aed" stroke-width="13" stroke-linecap="round" opacity="0.4"/>
+
+  <line x1="128" y1="138" x2="128" y2="50"
+        stroke="url(#stroke-main)" stroke-width="14" stroke-linecap="round"/>
+
+  <line x1="128" y1="138" x2="198" y2="58"
+        stroke="#7c3aed" stroke-width="13" stroke-linecap="round" opacity="0.4"/>
+</svg>
