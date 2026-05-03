@@ -20,6 +20,31 @@
     --bg-pressed: #F0F2F5;
     --border: #E8EBF0;
     --success: #22C55E;
+    --picker-bg: #FFFFFF;
+    --picker-border: #E8EBF0;
+    --picker-shadow: 0 8px 32px rgba(0,0,0,.12);
+    --picker-title: #1A1D26;
+    --picker-card-bg: #FFFFFF;
+    --picker-card-border: #E8EBF0;
+    --picker-card-shadow: 0 2px 8px rgba(0,0,0,.06);
+    --picker-card-hover-bg: #F8F9FB;
+    --picker-card-hover-border: #E8F0FC;
+    --picker-card-pressed-bg: #F0F2F5;
+    --picker-card-selected-bg: #E8F0FC;
+    --picker-card-selected-border: #1051A9;
+    --picker-card-name: #5F6678;
+    --picker-key-bg: #1051A9;
+    --picker-key-color: #FFFFFF;
+    --picker-key-badge-color: #9198A8;
+    --picker-footer-border: #E8EBF0;
+    --picker-footer-text: #9198A8;
+    --picker-kbd-bg: #F8F9FB;
+    --picker-kbd-border: #E8EBF0;
+    --picker-close-bg: transparent;
+    --picker-close-color: #9198A8;
+    --picker-close-hover-bg: #F8F9FB;
+    --picker-close-hover-color: #5F6678;
+    --picker-close-pressed-bg: #F0F2F5;
     --radius-lg: 14px;
     --radius-md: 12px;
     --radius-sm: 8px;
@@ -30,6 +55,47 @@
     --shadow-md: 0 4px 12px rgba(0,0,0,.08);
     --shadow-lg: 0 8px 32px rgba(0,0,0,.12);
     --shadow-xl: 0 16px 48px rgba(0,0,0,.16);
+}
+
+[data-theme="dark"] {
+    --accent: #3D7FD9;
+    --accent-hover: #2D6BC4;
+    --accent-pressed: #1D57AF;
+    --accent-light: #1A2D45;
+    --accent-muted: #253D5C;
+    --text-primary: #E8E9ED;
+    --text-secondary: #9198A8;
+    --text-tertiary: #7A8194;
+    --bg: #1A1B1E;
+    --bg-secondary: #232428;
+    --bg-pressed: #1E1F23;
+    --border: #35363C;
+    --success: #22C55E;
+    --picker-bg: #1A1B1E;
+    --picker-border: #35363C;
+    --picker-shadow: 0 8px 32px rgba(0,0,0,.32);
+    --picker-title: #E8E9ED;
+    --picker-card-bg: #232428;
+    --picker-card-border: #35363C;
+    --picker-card-shadow: 0 2px 8px rgba(0,0,0,.2);
+    --picker-card-hover-bg: #2A2B30;
+    --picker-card-hover-border: #1A2D45;
+    --picker-card-pressed-bg: #1E1F23;
+    --picker-card-selected-bg: #1A2D45;
+    --picker-card-selected-border: #3D7FD9;
+    --picker-card-name: #9198A8;
+    --picker-key-bg: #3D7FD9;
+    --picker-key-color: #FFFFFF;
+    --picker-key-badge-color: #7A8194;
+    --picker-footer-border: #35363C;
+    --picker-footer-text: #7A8194;
+    --picker-kbd-bg: #232428;
+    --picker-kbd-border: #35363C;
+    --picker-close-bg: transparent;
+    --picker-close-color: #7A8194;
+    --picker-close-hover-bg: #2A2B30;
+    --picker-close-hover-color: #9198A8;
+    --picker-close-pressed-bg: #1E1F23;
 }
 
 html {
@@ -61,11 +127,41 @@ body {
     border-bottom: 1px solid var(--border);
 }
 
+[data-theme="dark"] .header {
+    background: rgba(26,27,30,.85);
+}
+
 .header-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 56px;
+}
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    color: var(--text-secondary);
+    font-family: var(--font);
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: var(--radius-sm);
+    transition: all .15s;
+}
+
+.theme-toggle:hover {
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+}
+
+.theme-toggle svg {
+    width: 18px;
+    height: 18px;
 }
 
 .logo {
@@ -213,10 +309,10 @@ body {
 }
 
 .picker-border {
-    background: #FFFFFF;
-    border: 1px solid #E8EBF0;
+    background: var(--picker-bg);
+    border: 1px solid var(--picker-border);
     border-radius: 14px;
-    box-shadow: 0 8px 32px rgba(0,0,0,.12);
+    box-shadow: var(--picker-shadow);
     overflow: hidden;
 }
 
@@ -234,7 +330,7 @@ body {
     font-family: "Segoe UI Variable", "Segoe UI", system-ui, sans-serif;
     font-size: 18px;
     font-weight: 600;
-    color: #1A1D26;
+    color: var(--picker-title);
 }
 
 .picker-close {
@@ -242,8 +338,8 @@ body {
     height: 28px;
     border-radius: 14px;
     border: none;
-    background: transparent;
-    color: #9198A8;
+    background: var(--picker-close-bg);
+    color: var(--picker-close-color);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -252,12 +348,12 @@ body {
 }
 
 .picker-close:hover {
-    background: #F8F9FB;
-    color: #5F6678;
+    background: var(--picker-close-hover-bg);
+    color: var(--picker-close-hover-color);
 }
 
 .picker-close:active {
-    background: #F0F2F5;
+    background: var(--picker-close-pressed-bg);
 }
 
 .picker-url {
@@ -268,11 +364,15 @@ body {
     margin-bottom: 8px;
     font-family: "Cascadia Code", "Consolas", monospace;
     font-size: 11px;
-    color: #9198A8;
+    color: var(--picker-key-badge-color);
     max-height: 20px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.picker-url svg {
+    color: var(--picker-key-badge-color);
 }
 
 .picker-grid {
@@ -283,8 +383,8 @@ body {
 .browser-card {
     display: block;
     position: relative;
-    background: #FFFFFF;
-    border: 1px solid #E8EBF0;
+    background: var(--picker-card-bg);
+    border: 1px solid var(--picker-card-border);
     border-radius: 12px;
     padding: 10px;
     margin: 6px;
@@ -292,34 +392,34 @@ body {
     transition: all .15s cubic-bezier(.25,.46,.45,.94);
     text-align: center;
     font-family: inherit;
-    box-shadow: 0 2px 8px rgba(0,0,0,.06);
+    box-shadow: var(--picker-card-shadow);
     height: 78px;
 }
 
 .browser-card:hover {
-    background: #F8F9FB;
-    border-color: #E8F0FC;
+    background: var(--picker-card-hover-bg);
+    border-color: var(--picker-card-hover-border);
     transform: scale(1.02);
 }
 
 .browser-card:active {
-    background: #F0F2F5;
-    border-color: #1051A9;
+    background: var(--picker-card-pressed-bg);
+    border-color: var(--accent);
     transform: scale(0.97);
 }
 
 .browser-card.selected {
-    background: #E8F0FC;
-    border: 2px solid #1051A9;
-    box-shadow: 0 2px 8px rgba(0,0,0,.06);
+    background: var(--picker-card-selected-bg);
+    border: 2px solid var(--picker-card-selected-border);
+    box-shadow: var(--picker-card-shadow);
 }
 
 .browser-card-key {
     position: absolute;
     top: 5px;
     left: 7px;
-    background: #1051A9;
-    color: #FFFFFF;
+    background: var(--picker-key-bg);
+    color: var(--picker-key-color);
     font-family: "Cascadia Code", "Consolas", monospace;
     font-size: 10px;
     font-weight: 600;
@@ -348,7 +448,7 @@ body {
     font-family: "Segoe UI Variable", "Segoe UI", system-ui, sans-serif;
     font-size: 9px;
     font-weight: 500;
-    color: #5F6678;
+    color: var(--picker-card-name);
     line-height: 1;
 }
 
@@ -358,25 +458,25 @@ body {
     justify-content: space-between;
     margin-top: 8px;
     padding-top: 8px;
-    border-top: 1px solid #E8EBF0;
+    border-top: 1px solid var(--picker-footer-border);
 }
 
 .picker-footer-brand {
     font-family: "Segoe UI Variable", "Segoe UI", system-ui, sans-serif;
     font-size: 12px;
     font-weight: 300;
-    color: #9198A8;
+    color: var(--picker-footer-text);
 }
 
 .picker-footer-hint {
     font-family: "Cascadia Code", "Consolas", monospace;
     font-size: 11px;
-    color: #9198A8;
+    color: var(--picker-footer-text);
 }
 
 .picker-footer-hint kbd {
-    background: #F8F9FB;
-    border: 1px solid #E8EBF0;
+    background: var(--picker-kbd-bg);
+    border: 1px solid var(--picker-kbd-border);
     border-radius: 4px;
     padding: 1px 4px;
     font-family: inherit;
@@ -387,7 +487,7 @@ body {
     display: inline-block;
     width: 1px;
     height: 10px;
-    background: #E8EBF0;
+    background: var(--picker-footer-border);
     vertical-align: middle;
 }
 
@@ -746,6 +846,10 @@ body {
 
     .browser-card-name {
         font-size: 8px;
+    }
+
+    .theme-toggle span {
+        display: none;
     }
 
     .footer-inner {
