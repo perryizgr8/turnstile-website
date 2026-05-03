@@ -456,11 +456,11 @@ body {
 }
 
 .pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
     gap: 24px;
     max-width: 720px;
     margin: 0 auto;
+    align-items: stretch;
 }
 
 .pricing-card {
@@ -468,10 +468,19 @@ body {
     border-radius: var(--radius-lg);
     padding: 32px 28px;
     background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+}
+
+.pricing-features {
+    flex: 1;
 }
 
 .pricing-card .btn {
     margin-top: 28px;
+    width: 100%;
 }
 
 .pricing-card-featured {
@@ -538,10 +547,6 @@ body {
     content: "\2713  ";
     color: var(--success);
     font-weight: 600;
-}
-
-.pricing-card .btn {
-    width: 100%;
 }
 
 .privacy {
@@ -661,7 +666,7 @@ body {
     }
 
     .pricing-grid {
-        grid-template-columns: 1fr;
+        flex-direction: column;
     }
 
     .mockup-grid {
